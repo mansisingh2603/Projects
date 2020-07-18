@@ -14,13 +14,11 @@ def find_index(x, y):
 
 pygame.init()
 
-display.set_caption('MY GAME')  # NAME OF THE GAME
-screen = display.set_mode((512, 512))  # SCREEN DIMENSIONS
+display.set_caption('MY GAME')                    # NAME OF THE GAME
+screen = display.set_mode((512, 512))             # SCREEN DIMENSIONS
 matched = image.load('otherassests/matched.png')  # DISPLAYING IMAGE ON SCREEN
 win = image.load('otherassests/done.png')
 
-# SETTING ITS PARAMETERS,
-# (0,0) ENSURES THAT IT COVERS THE WHOLE SCREE
 running = True
 
 tiles = [Animal(i) for i in range(0, gc.NUM_TILES_TOTAL)]
@@ -33,25 +31,25 @@ while running:
         if e.type == pygame.QUIT:
             running = False
         if e.type == pygame.KEYDOWN:
-            if e.key == pygame.K_ESCAPE:  # close the window or press esc to close the game
+            if e.key == pygame.K_ESCAPE:    # close the window or press esc to close the game
                 running = False
 
         if e.type == pygame.MOUSEBUTTONDOWN:
             mouse_x, mouse_y = pygame.mouse.get_pos()
             index = find_index(mouse_x, mouse_y)
             if index not in current_images:                         #checking for unique indices within current_images
-                if len(current_images) > 1:
-                    current_images = current_images[1:] + [index]   # it holds the second ele, ignores first
+                if len(current_images) > 2:
+                    current_images = current_images[1:]             # it holds the second ele, ignores first
                 else:
                     current_images.append(index)
 
-    screen.fill((255, 255, 255))  # white background
+    screen.fill((255, 255, 255))                            # white background
     total_skipped = 0
 
-    for i, tile in enumerate(tiles):            # to get index we use enumerate
+    for i, tile in enumerate(tiles):                       
         image_i = tile.image if i in current_images else tile.box
         if not tile.skip:
-            screen.blit(image_i, (tile.col * gc.IMAGE_SIZE + gc.MARGIN,     # display the images of animals in tiles on the screen using a loop and specifying the
+            screen.blit(image_i, (tile.col * gc.IMAGE_SIZE + gc.MARGIN,      # display the images of animals in tiles on the screen using a loop and specifying the
                                  tile.row * gc.IMAGE_SIZE + gc.MARGIN))      # coordinates of the IMAGE size using the info in animals.py
         else:
             total_skipped += 1
