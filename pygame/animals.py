@@ -3,7 +3,7 @@ import random
 import game_config as gc
 from pygame import image, transform
 
-animal_count = dict((a, 0) for a in gc.ASSET_FILES)
+animal_count = dict((a, 0) for a in gc.ASSET_FILES)       
 
 
 def available_animals():
