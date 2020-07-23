@@ -11,13 +11,15 @@ def find_index(x, y):
     index = row * gc.NUM_TILES_SIDE + col
     return index
 
+#otherassets and assets file is present in the repo for reference.
+
 
 pygame.init()
 
 display.set_caption('MY GAME')  # NAME OF THE GAME
 screen = display.set_mode((512, 512))  # SCREEN DIMENSIONS
-matched = image.load('otherassests/matched.png')  # DISPLAYING IMAGE ON SCREEN
-win = image.load('otherassests/done.png')
+matched = image.load('otherassests/matched.png')  # DISPLAYING IMAGE ON SCREEN 
+win = image.load('otherassests/done.png')          
 
 # SETTING ITS PARAMETERS,
 # (0,0) ENSURES THAT IT COVERS THE WHOLE SCREE
