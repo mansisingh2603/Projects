@@ -1,0 +1,25 @@
+body{
+	background-color: rgba(0,0,0,0.9);
+}
+
+.light {
+    position: absolute;
+    top: 3vh;
+    left: 30vw;
+    height: 15vh;
+}
+#car {
+    position: absolute;
+    top: 10vh;
+    left: 2vw;
+    height: 20vh;
+    opacity:1;
+}
+#crossing{
+	position: absolute;
+	left:1vh;
+	top:45vh;
+	opacity:0.2;
+	width:100%;
+	
+}
