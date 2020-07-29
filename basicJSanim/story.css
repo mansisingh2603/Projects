@@ -1,0 +1,22 @@
+body {
+  background-color: black;
+}
+#hero {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  height: 500px;
+}
+#villain {
+  position: absolute;
+  top: 150px;
+  left: 900px;
+  height: 300px;
+}
+#lightning {
+  position: absolute;
+  top: 250px;
+  left: 190px;
+  height: 120px;
+  width: 120px;
+}
