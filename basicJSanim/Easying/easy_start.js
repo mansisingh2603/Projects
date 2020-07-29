@@ -1,3 +1,5 @@
+//code to animate a car that starts from a red light and slowly picks up speed.
+
 let redLight = document.querySelector("#redLight");
 let car      = document.querySelector("#car");
 
